@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coolie Designs</title>
+    <style>
+        /* Style for the button */
+        .responsive-button {
+            font-size: 2vw; /* Adjust the font size based on viewport width */
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Style for the round button */
+        .round-button {
+            background-color: transparent;
+            border: 2px solid white; /* White border */
+            color: white; /* White text color */
+            border-radius: 10px; /* Rounded corners */
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .round-button2 {
+            background-color: transparent;
+            border: 2px solid blue; /* White border */
+            color: black; /* White text color */
+            border-radius: 10px; /* Rounded corners */
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Style for the button when clicked */
+        .round-button.clicked {
+            background-color: yellow; /* Yellow background */
+        }
+
+        /* Style for the blue button with rounded corners */
+        .blue-button {
+            background-color: blue; /* Blue background */
+            color: white; /* White text color */
+            border: none;
+            border-radius: 50px; /* Rounded corners */
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Style the navbar links */
+        #navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+        }
+
+        #navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        
+
+        /* Style for the navigation bar */
+        #navbar {
+            background-color: #333; /* Black background color */
+            position: fixed; /* Make it stick/fixed */
+            top: 0; /* Stay on top */
+            width: 100%; /* Full width */
+            transition: top 0.3s; /* Transition effect when sliding down (and up) */
+        }
+
+        .mainBgColor{
+            background-color: black;
+        }
+
+        .color{
+            color: red;
+        }
+
+        .para{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body class="mainBgColor">
+
+    <div id="navbar">
+        <a href="#home" style="font-family: Arial, Helvetica, sans-serif;">Coolie Designs</a>
+    </div>
+    
+    <br><br><br>
+
+    <center>
+        <h2 class="para" style="color: white;">Coolie Designs</h2>
+        <p class="para" style="color: white;">To create a digital hub where users seamlessly access all their needs, from information and services to entertainment and community engagement. Our vision is to be the go-to destination that simplifies life, fosters connections, and empowers individuals by providing a comprehensive and user-friendly online experience.</p>
+        <p class="para" style="color: white;">Explore below :</p>
+        
+        
+        <a href="features/jobhub.html"><button class="blue-button">Job hub</button></a>
+        <a href="features/jobhub.html"><button class="blue-button">Job hub</button></a>
+    </center>
+
+    <br>
+    
+    <!--
+    <button class="round-button">Banks</button>
+    <button class="round-button">Schools</button>
+    
+    <button class="round-button">Investing / Mutual funds</button>
+    <button class="round-button">Grocery stores</button>
+    <button class="round-button">Property / Houses</button>
+    <button class="round-button">Online clothing stores</button>
+    <button class="round-button">Car dealerships</button>-->
+    
+    <script>
+        // JavaScript code (optional)
+        // You can add interactivity or additional functionality here
+        // For example, handle button clicks or perform other actions
+    
+        // JavaScript code to change button color on click
+        function changeColor() {
+            const button = document.querySelector('.round-button');
+            button.classList.add('clicked');
+        }
+
+        // JavaScript code to hide/show the navbar on scroll
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-50px"; // Hide the navbar
+            }
+            prevScrollpos = currentScrollPos;
+        };
+    </script>
+</body>
+</html>
