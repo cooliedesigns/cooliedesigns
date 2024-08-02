@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coolie Designs</title>
+    <title>Coolie Designs - Job Hub</title>
     <style>
         /* Style for the button */
         .responsive-button {
@@ -61,6 +61,18 @@
             cursor: pointer;
         }
 
+        
+        .white-button {
+            background-color: white; /* Blue background */
+            color: black; /* White text color */
+            border: none;
+            border-radius: 50px; /* Rounded corners */
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+
         /* Style the navbar links */
         #navbar a {
             float: left;
@@ -97,25 +109,50 @@
         .para{
             font-family: Arial, Helvetica, sans-serif;
         }
+        /* Style for the search input */
+        #myInput {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Style for the list items */
+        #myUL li {
+            list-style-type: none;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
     </style>
 </head>
-<body class="mainBgColor">
+<body>
 
     <div id="navbar">
-        <a href="#home" style="font-family: Arial, Helvetica, sans-serif;">Coolie Designs</a>
+        <a href="../index.html" style="font-family: Arial, Helvetica, sans-serif;">Coolie Designs</a>
     </div>
     
     <br><br><br>
 
     <center>
-        <h2 class="para" style="color: white;">Coolie Designs</h2>
-        <p class="para" style="color: white;">To create a digital hub where users seamlessly access all their needs, from information and services to entertainment and community engagement. Our vision is to be the go-to destination that simplifies life, fosters connections, and empowers individuals by providing a comprehensive and user-friendly online experience.</p>
-        <p class="para" style="color: white;">Explore below :</p>
-        
-        
-        <a href="features/jobhub.html"><button class="blue-button">Apply for a job</button></a>
-        <br><br>
-        <a href="" target=""><button class="yellow-button">More features coming soon</button></a>
+        <h2 class="para">Job hub</h2>
+        <p class="para">Jobs provide a platform for continuous learning. Whether it’s acquiring new skills, adapting to changes, or solving complex problems, work challenges individuals to grow.</p>
+        <p class="para">Apply for a job using the platform(s) below :</p>
+        <input type="text" id="myInput" onkeyup="filterList()" placeholder="Search for a job portal/hub, or click on the options below...">
+        <ul id="myUL">
+            <li><a href="https://za.indeed.com/" target="_blank"><button class="blue-button">Indeed</button></a></li>
+            <li><a href="https://www.careers24.com/" target="_blank"><button class="blue-button">Careers24</button></a></li>
+            <li><a href="https://www.careerjunction.co.za/" target="_blank"><button class="blue-button">Career Junction</button></a></li>
+            <li><a href="https://www.pnet.co.za/" target="_blank"><button class="blue-button">Pnet</button></a></li>
+            <li><a href="https://www.careerjet.co.za/" target="_blank"><button class="blue-button">Career Jet</button></a></li>
+            <li><a href="https://www.freerecruit.co.za/" target="_blank"><button class="blue-button">Free Recruit</button></a></li>
+            <li><a href="https://www.glassdoor.com/index.htm" target="_blank"><button class="blue-button">Glassdoor</button></a></li>
+            <li><a href="https://hireresolve.co.za/" target="_blank"><button class="blue-button">Hire Resolve</button></a></li>
+            <li><a href="https://www.jobmail.co.za/" target="_blank"><button class="blue-button">Job Mail</button></a></li>
+            <li><a href="https://www.jobvine.co.za/" target="_blank"><button class="blue-button">Job Vine</button></a></li>
+            <li><a href="" target=""><button class="yellow-button">More platforms coming soon</button></a></li>
+            <!-- Add more list items here -->
+        </ul>
     </center>
 
     <br>
@@ -152,6 +189,23 @@
             }
             prevScrollpos = currentScrollPos;
         };
+
+        // JavaScript code to filter the list based on user input
+        function filterList() {
+            const input = document.getElementById("myInput");
+            const filter = input.value.toUpperCase();
+            const ul = document.getElementById("myUL");
+            const li = ul.getElementsByTagName("li");
+
+            for (let i = 0; i < li.length; i++) {
+                const txtValue = li[i].textContent || li[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
     </script>
 </body>
 </html>
